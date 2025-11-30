@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mini Dashboard IoT</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Mini Dashboard IoT</h1>
+
+  <div class="card">
+    <h2>Capteur virtuel</h2>
+
+    <p>
+      État du système :
+      <span id="status" class="badge badge-off">Désactivé</span>
+    </p>
+
+    <p>
+      Valeur du capteur :
+      <span id="sensor-value">--</span>
+    </p>
+
+    <div class="buttons">
+      <button id="btn-on">Activer</button>
+      <button id="btn-off">Désactiver</button>
+    </div>
+
+    <p class="hint">
+      La valeur du capteur est simulée et se met à jour toutes les 2 secondes
+      lorsque le système est activé.
+    </p>
+  </div>
+
+  <div class="log-container">
+    <h3>Journal des événements</h3>
+    <div id="log"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

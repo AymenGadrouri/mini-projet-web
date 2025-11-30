@@ -1,0 +1,104 @@
+/* Style global */
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background: #eef;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Titre principal */
+h1 {
+  margin-top: 10px;
+  color: #333;
+}
+
+/* Carte centrale */
+.card {
+  background: #fff;
+  padding: 20px;
+  width: 320px;
+  margin: 20px auto;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Label / badge d'état */
+.badge {
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-weight: bold;
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+.badge-on {
+  background-color: #2ecc71;
+}
+
+.badge-off {
+  background-color: #e74c3c;
+}
+
+/* Valeur de capteur */
+#sensor-value {
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+
+/* Boutons */
+.buttons {
+  margin-top: 15px;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 6px;
+  border: none;
+  font-size: 0.95rem;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+#btn-on {
+  background-color: #2ecc71;
+  color: #fff;
+}
+
+#btn-off {
+  background-color: #e74c3c;
+  color: #fff;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Texte d'aide */
+.hint {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 15px;
+}
+
+/* Zone de log */
+.log-container {
+  width: 90%;
+  max-width: 500px;
+  margin: 20px auto;
+  text-align: left;
+}
+
+#log {
+  background: #fff;
+  border-radius: 10px;
+  min-height: 80px;
+  max-height: 200px;
+  overflow-y: auto;
+  padding: 10px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  font-size: 0.9rem;
+}
+
