@@ -1,72 +1,23 @@
-// Récupération des éléments du DOM
-const statusSpan = document.getElementById("status");
-const sensorValueSpan = document.getElementById("sensor-value");
-const logDiv = document.getElementById("log");
+// Typing effect
+const text = "We Protect. We Defend. We Secure.";
+const typingElement = document.querySelector(".typing-text");
+let index = 0;
 
-const btnOn = document.getElementById("btn-on");
-const btnOff = document.getElementById("btn-off");
-
-let systemOn = false;
-
-// ---- Fonctions utilitaires ----
-
-// Ajoute une ligne dans le journal
-function addLog(message) {
-  const time = new Date().toLocaleTimeString();
-  const line = document.createElement("div");
-  line.textContent = `[${time}] ${message}`;
-  logDiv.prepend(line); // dernier événement en haut
+function typeText() {
+    typingElement.innerHTML = text.slice(0, index);
+    index++;
+    if (index <= text.length) {
+        setTimeout(typeText, 80);
+    }
 }
+typeText();
 
-// Met à jour l'affichage de l'état (badge)
-function updateStatusDisplay() {
-  if (systemOn) {
-    statusSpan.textContent = "Activé";
-    statusSpan.classList.remove("badge-off");
-    statusSpan.classList.add("badge-on");
-  } else {
-    statusSpan.textContent = "Désactivé";
-    statusSpan.classList.remove("badge-on");
-    statusSpan.classList.add("badge-off");
-    sensorValueSpan.textContent = "--";
-  }
-}
+// Theme toggle
+const toggleBtn = document.getElementById("toggle-theme");
 
-// Simule la "réponse" d'un capteur (comme si on appelait un backend)
-function getFakeSensorValue() {
-  // Simule une température entre 20 et 35°C
-  const value = 20 + Math.random() * 15;
-  return value.toFixed(1);
-}
-
-// ---- Gestion des boutons ----
-
-btnOn.addEventListener("click", () => {
-  if (!systemOn) {
-    systemOn = true;
-    updateStatusDisplay();
-    addLog("Système activé.");
-  }
+toggleBtn.addEventListener("click", () => {
+    document.body.classList.toggle("light");
 });
 
-btnOff.addEventListener("click", () => {
-  if (systemOn) {
-    systemOn = false;
-    updateStatusDisplay();
-    addLog("Système désactivé.");
-  }
-});
-
-// ---- Mise à jour périodique du capteur ----
-
-setInterval(() => {
-  if (systemOn) {
-    const value = getFakeSensorValue();
-    sensorValueSpan.textContent = value + " °C";
-    addLog(`Nouvelle valeur de capteur : ${value} °C`);
-  }
-}, 2000); // toutes les 2 secondes
-
-// Initialisation
-updateStatusDisplay();
-addLog("Dashboard chargé.");
+// Auto year
+document.getElementById("year").textContent = new Date().getFullYear();
