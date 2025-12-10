@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aymen Gadrouri — Cybersecurity Portfolio</title>
+    <title>Aymen Gadrouri | Cybersecurity Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
 
@@ -12,59 +13,148 @@
     <div class="logo">A.GADR</div>
     <nav>
         <a href="#home">Home</a>
-        <a href="#about">About Me</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#timeline">Timeline</a>
         <a href="#projects">Projects</a>
         <a href="login.html" class="btn-small">Login</a>
-        <button id="toggle-theme" class="btn-small">Mode</button>
+
+        <!-- Theme Toggle Icon -->
+        <div id="theme-toggle" class="theme-icon">🌙</div>
     </nav>
 </header>
 
+<!-- ========== HERO SECTION ========== -->
 <section id="home" class="hero">
     <div class="hero-content">
         <h1>Hello, I'm <span class="accent">Aymen Gadrouri</span></h1>
-        <p class="subtitle">21-year-old Cybersecurity Student at ENSA Tetouan</p>
-        <p>I specialize in ethical hacking, embedded systems, system security, and IoT cyber-defense.</p>
-        <a href="#projects" class="btn">See My Work</a>
+        <p class="subtitle">21-year-old Cybersecurity Student @ ENSA Tetouan</p>
+        <p class="intro">
+            Passionate about cybersecurity, ethical hacking, embedded systems, 
+            and protecting modern digital infrastructures.
+        </p>
+        <a href="#projects" class="btn">View My Projects</a>
     </div>
 </section>
 
+<!-- ========== ABOUT SECTION ========== -->
 <section id="about" class="section">
-    <h2>About Me</h2>
-    <p class="about-text">
-        I am a passionate cybersecurity student focused on system security, ethical hacking, 
-        network defense, and real-world IoT security applications.  
-        I study at <strong>ENSA Tetouan</strong>, where I work on embedded systems, RFID security,
-        access control, encryption, and secure architectures.
+    <h2 class="section-title">About Me</h2>
+    <p class="section-desc">
+        I’m a cybersecurity engineering student at ENSA Tetouan, specializing in:
+        secure embedded systems, penetration testing, system security, RFID access systems,
+        and real-world cyber defense applications.  
     </p>
 </section>
 
+<!-- ========== SKILLS SECTION ========== -->
+<section id="skills" class="section">
+    <h2 class="section-title">Skills</h2>
+
+    <div class="skills-container">
+
+        <div class="skill">
+            <span>Penetration Testing</span>
+            <div class="progress"><div style="width: 85%"></div></div>
+        </div>
+
+        <div class="skill">
+            <span>Embedded System Security</span>
+            <div class="progress"><div style="width: 90%"></div></div>
+        </div>
+
+        <div class="skill">
+            <span>Python & C Programming</span>
+            <div class="progress"><div style="width: 80%"></div></div>
+        </div>
+
+        <div class="skill">
+            <span>RFID & IoT Security</span>
+            <div class="progress"><div style="width: 88%"></div></div>
+        </div>
+
+        <div class="skill">
+            <span>Web Security</span>
+            <div class="progress"><div style="width: 75%"></div></div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ========== TIMELINE SECTION ========== -->
+<section id="timeline" class="section">
+    <h2 class="section-title">My Cybersecurity Journey</h2>
+
+    <div class="timeline">
+
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <h3>2021 – ENSA Tetouan</h3>
+                <p>Began engineering studies with interest in digital systems & embedded architecture.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <h3>2023 – Embedded System Security</h3>
+                <p>Worked on ESP32, RFID authentication, PIR sensors & secure IoT models.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <h3>2024 – System & Network Security</h3>
+                <p>Developed skills in ethical hacking, system vulnerability assessment, and firewall hardening.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <h3>2025 – Cybersecurity Portfolio</h3>
+                <p>Created a full security engineering portfolio, including authentication systems & projects.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ========== PROJECTS SECTION ========== -->
 <section id="projects" class="section">
-    <h2>My Projects</h2>
+    <h2 class="section-title">Projects</h2>
 
     <div class="cards">
 
         <div class="card">
             <h3>RFID Secure Access System</h3>
-            <p>ESP32-based RFID authentication with PIR multi-person detection and security logging.</p>
+            <p>
+                ESP32-based RFID authentication with PIR multi-person detection, logging, and alert system.
+            </p>
         </div>
 
         <div class="card">
             <h3>Side-Channel Attack Simulation</h3>
-            <p>Timing attack demo using keypad + LCD to expose vulnerabilities in embedded systems.</p>
+            <p>
+                Timing attack demonstration using keypad & LCD, exposing vulnerabilities in embedded systems.
+            </p>
         </div>
 
         <div class="card">
             <h3>Cybersecurity Portfolio Website</h3>
-            <p>A personal website with dark/light mode, login system, and modern UI.</p>
+            <p>
+                A hybrid-mode portfolio with modern UI, animations, skills, timeline, and advanced login system.
+            </p>
         </div>
 
     </div>
 </section>
 
 <footer>
-    <p>© <span id="year"></span> Aymen Gadrouri — Cybersecurity Portfolio</p>
+    <p>© <span id="year"></span> Aymen Gadrouri — Cybersecurity Engineer</p>
 </footer>
 
-<script src="script.js"></script>
 </body>
 </html>
