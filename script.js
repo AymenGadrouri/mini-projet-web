@@ -1,5 +1,5 @@
 /* ===========================================================
-   THEME TOGGLE (🌞 / 🌙)
+   THEME TOGGLE 🌞 / 🌙
    =========================================================== */
 const themeBtn = document.getElementById("theme-toggle");
 
@@ -7,11 +7,11 @@ if (themeBtn) {
     themeBtn.addEventListener("click", () => {
         document.body.classList.toggle("light");
 
-        // Change icon depending on mode
+        // Change icon based on theme
         if (document.body.classList.contains("light")) {
-            themeBtn.textContent = "🌙"; // dark mode icon
+            themeBtn.textContent = "🌙"; // switch to dark
         } else {
-            themeBtn.textContent = "🌞"; // light mode icon
+            themeBtn.textContent = "🌞"; // switch to light
         }
     });
 }
@@ -40,14 +40,14 @@ function register() {
     const pass = document.getElementById("reg-password").value;
 
     if (!user || !pass) {
-        alert("Please fill all fields.");
+        alert("Veuillez remplir tous les champs.");
         return;
     }
 
     localStorage.setItem("username", user);
     localStorage.setItem("password", pass);
 
-    alert("Account created successfully!");
+    alert("Compte créé avec succès !");
     showLogin();
 }
 
@@ -59,9 +59,9 @@ function login() {
         user === localStorage.getItem("username") &&
         pass === localStorage.getItem("password")
     ) {
-        alert("Logged in!");
+        alert("Connexion réussie !");
         window.location.href = "index.html";
     } else {
-        alert("Wrong username or password.");
+        alert("Nom d'utilisateur ou mot de passe incorrect.");
     }
 }
