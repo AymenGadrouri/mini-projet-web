@@ -32,7 +32,7 @@ body {
 
 a {
     text-decoration: none;
-    color: var(--text);
+    color: inherit;
 }
 
 .hidden { display: none; }
@@ -63,8 +63,9 @@ a {
 nav {
     display: flex;
     align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
+    gap: 25px;
+    overflow: visible;
+    flex-wrap: nowrap;
 }
 
 .btn-small {
@@ -228,7 +229,7 @@ nav {
     box-shadow: 0 0 20px rgba(0, 200, 255, 0.2);
 }
 
-/* Upcoming Item (2027) */
+/* UPCOMING 2027 */
 .upcoming-dot {
     background: #ffaa00;
     box-shadow: 0 0 15px #ffaa00;
@@ -273,6 +274,15 @@ nav {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    flex-direction: column;
+}
+
+.back-home-btn {
+    margin-bottom: 20px;
+    color: var(--accent);
+    font-size: 18px;
+    text-decoration: none;
+    display: inline-block;
 }
 
 .login-wrapper {
@@ -328,7 +338,12 @@ footer {
 /* ===========================================================
    RESPONSIVE
    =========================================================== */
-@media(max-width: 780px) {
+@media(max-width: 900px) {
+    nav {
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+
     .intro, .section-desc, .timeline, .skills-container {
         width: 90%;
     }
