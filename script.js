@@ -1,23 +1,51 @@
-// Typing effect
-const text = "We Protect. We Defend. We Secure.";
-const typingElement = document.querySelector(".typing-text");
-let index = 0;
+// ===== YEAR FOOTER =====
+document.getElementById("year").textContent = new Date().getFullYear();
 
-function typeText() {
-    typingElement.innerHTML = text.slice(0, index);
-    index++;
-    if (index <= text.length) {
-        setTimeout(typeText, 80);
+// ===== THEME SWITCH =====
+const toggleBtn = document.getElementById("toggle-theme");
+if (toggleBtn) {
+    toggleBtn.addEventListener("click", () => {
+        document.body.classList.toggle("light");
+    });
+}
+
+// ===== LOGIN / REGISTER FRONTEND =====
+
+// Show register form
+function showRegister() {
+    document.querySelector(".login-box").classList.add("hidden");
+    document.querySelector(".register-box").classList.remove("hidden");
+}
+
+// Show login form
+function showLogin() {
+    document.querySelector(".register-box").classList.add("hidden");
+    document.querySelector(".login-box").classList.remove("hidden");
+}
+
+// Fake local storage login
+function register() {
+    const user = document.getElementById("reg-username").value;
+    const pass = document.getElementById("reg-password").value;
+
+    localStorage.setItem("username", user);
+    localStorage.setItem("password", pass);
+
+    alert("Account created! You can now login.");
+    showLogin();
+}
+
+function login() {
+    const user = document.getElementById("login-username").value;
+    const pass = document.getElementById("login-password").value;
+
+    if (
+        user === localStorage.getItem("username") &&
+        pass === localStorage.getItem("password")
+    ) {
+        alert("Logged in successfully!");
+        window.location.href = "index.html";
+    } else {
+        alert("Incorrect username or password.");
     }
 }
-typeText();
-
-// Theme toggle
-const toggleBtn = document.getElementById("toggle-theme");
-
-toggleBtn.addEventListener("click", () => {
-    document.body.classList.toggle("light");
-});
-
-// Auto year
-document.getElementById("year").textContent = new Date().getFullYear();
